@@ -35,6 +35,7 @@ export default async (req, res) => {
     exclude_repo,
     size_weight,
     count_weight,
+    include_forks,
     custom_title,
     locale,
     border_radius,
@@ -123,6 +124,7 @@ export default async (req, res) => {
       parseArray(exclude_repo),
       size_weight,
       count_weight,
+      parseBoolean(include_forks),
     );
     const cacheSeconds = resolveCacheSeconds({
       requested: parseInt(cache_seconds, 10),
